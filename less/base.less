@@ -1,0 +1,1148 @@
+// 公共模块引入
+@import "px2rem";     // 导入换算 less
+@import "variable";   // 导入变量
+/* 你好呵呵呵 */
+@charset "utf-8";
+/*------------- S reset css  重置默认的一些样式  浏览器子自带的  目的是保持各种终端显示一致 -----------------*/
+html {
+    background: #fff;
+    overflow-y: scroll;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+html * {
+    outline: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+    /*设置所有的盒子的宽度以边框开始计算*/
+    -webkit-box-sizing: border-box;
+    /*要兼容 webkit 浏览器内核厂商 这种情况一般是老的移动端浏览器*/
+    box-sizing: border-box;
+}
+html, body {
+    background: #f7f7f7;
+    color: #e0e0e0;
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif !important;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section,::before,::after{
+    margin: 0;
+    padding: 0;
+    /*在移动端特殊的设置*/
+}
+input, select, textarea {
+    font-size: 100%
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+fieldset, img {
+    border: 0
+}
+del {
+    text-decoration: line-through
+}
+address, caption, cite, code, dfn, em, th, var {
+    font-style: normal;
+    font-weight: 500
+}
+ol, ul {
+    list-style: none
+}
+caption, th {
+    text-align: left
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 500
+}
+ins,a{
+    text-decoration: none;
+    color: #e0e0e0;
+}
+a:hover{
+    color: #e0e0e0;
+}
+input,textarea{
+    border: none;
+    outline: none;
+    resize: none;
+    /*特殊的属性定义  清除浏览器给input自带的样式*/
+    -webkit-appearance: none;/*组件默认的样式空*/
+}
+/*------------- E  reset css  重置默认的一些样式  浏览器子自带的  目的是保持各种终端显示一致 -----------------*/
+
+
+/*------------- S common css  也就是我们公用的css -------------*/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix::after,
+.clearfix::before{
+    content: ".";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.w33 { width: 33.3333%; }
+.w50 { width: 50%; }
+/*------------- E common css  也就是我们公用的css -------------*/
+
+// 头部开始
+.mm_header {
+    width: 100%;
+    height: 44*@rem;
+    background-color: @main-color;
+
+    .mm_logo {
+       float: left;
+
+       a {
+           display: block;
+           height: 100%;
+           padding: 11*@rem 12*@rem;
+
+           img {
+               height: 24*@rem;
+           }
+       }
+    }
+    .mm_app {
+        float: right;
+       
+        a {
+            display: block;
+            height: 100%;
+            padding: 7*@rem 12*@rem;
+            img {
+                height: 32*@rem;
+            }
+        }
+    }
+}
+// 公共搜索框
+.mm_search {
+    width: 100%;
+    height: 44*@rem;
+    background-color: #fff;
+    padding: 6*@rem;
+    position: relative;
+    padding-right: 80*@rem;
+    
+    input {
+        width: 100%;
+        height: 30*@rem;
+        border-radius: 15*@rem;
+        background-color: #f1f1f1;
+        padding-left: 10*@rem;
+        color: @font-color;
+        margin-right: 80*@rem;
+    }
+    .search_btn {
+        width: 63*@rem;
+        height: 30*@rem;
+        border-radius: 15*@rem;
+        border: none;
+        background-color: @main-color;
+        color: white;
+        .font-size(32);
+        position: absolute;
+        right: 5*@rem;
+        top: 5*@rem;
+    }
+}
+// 公共导航开始
+.mm_nav {
+    padding-top: 8*@rem;
+    padding-bottom: 8*@rem;
+    width: 100%;
+    background-color: #f1f1f1;
+    .row {
+        height: 172 *@rem;
+        padding-top: 10*@rem;
+        padding-bottom: 7*@rem;
+        background-color: white;
+        overflow: hidden;
+
+        &.contains {
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    .menu-item {
+        float: left;
+        width: 25%;
+        margin-top: 17*@rem;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            img {
+                display: block;
+                width: 38*@rem;
+                margin: 0 auto 3*@rem;
+            }
+
+            p {
+                text-align: center;
+                color: black;
+                .font-size(32);
+            }
+        }
+    }
+}
+// 推荐部分开始
+.recommen {
+    .recommen_content {
+        height: 25*@rem;
+        line-height: 25*@rem;
+        width: 100%;
+        background-color: @main-color;
+        color: white;
+        padding-left: 10*@rem;
+        .font-size(30);
+
+        img {
+            float: right;
+            color: white;
+            margin-top: 6*@rem;
+            margin-right: 7*@rem;
+        }
+    }
+}
+// 推荐商品开始
+.mm_recommen_product {
+    .recommen_product_list {
+        background-color: #fff;
+        text-align: left;
+        .font-size(28);
+        max-width: 900*@rem;
+        margin: 0 auto;
+
+        li {
+            padding:10*@rem 5*@rem;
+            min-height: 100*@rem;
+            float: left;
+            width: 100%;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                .pic {
+                    float: left;
+                    width: 110*@rem;
+
+                    img {
+                        width: 100*@rem;
+                        height: 100*@rem;
+                    }
+                }
+
+                .info {
+                    overflow: hidden;
+                    // min-height: 115*@rem;    
+                    // padding-left: 100*@rem;
+                    .title {
+                        color: #333;
+                        min-height: 60*@rem;
+                        .font-size(30);
+
+                        span {
+                            color: red;
+                        }
+                    }
+                    .other {
+                        margin-top: 8*@rem;
+                        color: @font-grew;
+                        margin-right: 5*@rem;
+
+                        .comment {
+                           float: right;
+                           height: 15*@rem;
+                           line-height: 15*@rem;
+                           .font-size(24);
+                           padding-left: 20*@rem;
+                           position: relative;
+
+                           .icon-comment {
+                               position: absolute;
+                               top: 0;
+                               left: 0;
+                               width: 14*@rem;
+                               height: 15*@rem;
+                               display: inline-block;
+                               margin-right: 4*@rem;
+                               background-image: url('../images/comment.svg');
+                               background-size: 14*@rem 15*@rem;
+                           }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// 更多开始
+.mm_more {
+    width: 100%;
+    padding: 8*@rem;
+    text-align: center;
+
+    a {
+        display: block;
+        width: 100%;
+        height: 30*@rem;
+        line-height: 30*@rem;
+        .font-size(26);
+        color: black;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-image: linear-gradient(#fff,#ececec);
+    }
+}
+// 公共底部开始
+.mm_footer {
+    margin-top: 10*@rem;
+    width: 100%;
+
+    .foot_top {
+        border-bottom: 1px solid #c4c4c4;
+        border-top: 1px solid #c4c4c4;
+
+        a {
+            float: left;
+            width: 30%;
+            text-align: center;
+            height: 35*@rem;
+            line-height: 35*@rem;
+            border-right: 1px solid #c4c4c4;
+            color: @font-grew;
+            .font-size(28);
+            color:#333;
+        }
+
+        a:last-child {
+            width: 40%;
+            border-right: none;
+
+            img {
+                vertical-align: middle;
+                margin-top: -4*@rem;
+                margin-right: 4*@rem;
+            }
+        }
+    }
+    .footer {
+        padding: 20*@rem;
+        text-align: center;
+        color: @font-color;
+         
+        a {
+            color: #666;
+        }
+    }
+}
+// 比价模块开始
+.mm_category {
+    width: 100%;
+
+    .category_ul {
+        width: 100%;
+        padding: 5*@rem;
+        
+        li:first-child > .tit {
+            border-radius: 5*@rem 5*@rem 0 0;
+        }
+
+        li:last-child > .tit {
+            border-radius: 0 0 5*@rem 5*@rem;
+        }
+        .tit {
+           width: 100%;
+           background-color: #eee;
+           border-bottom: 1px solid #bbb;
+            
+           a {
+               display: block;
+               width: 100%;
+               height: 40*@rem;
+               line-height: 40*@rem;
+               font-weight: bold;
+               color: black;
+               .font-size(32);
+               padding-left: 20*@rem;
+           }
+        }
+        
+        .info {
+            width: 100%;
+            display: none;
+            ul {
+            border-left: 1px solid #ccc;
+
+               li {
+                   float: left;
+                   width: 33.3%;
+
+                   a {
+                       display: block;
+                       width: 100%;
+                       height: 40*@rem;
+                       line-height: 40*@rem;
+                       border-right: 1px solid #ccc;
+                       border-bottom: 1px solid #ccc;
+                       text-align: center;
+                       color: black;
+                   }
+               }
+            }
+        }
+    }
+}
+//产品列表模块开始
+.mm_mbody {
+    .mdaohan {
+        width: 100%;
+        height: 40*@rem;
+        background-color: #5a5a5a;
+        border: 1px solid #ddd;
+        overflow: hidden;
+
+        ul {
+            width: 100%;
+            padding: 0 10*@rem;
+            overflow: hidden;
+
+            li {
+                float: left;
+                max-width: 40%;
+            
+                a {
+                    display: inline-block;
+                    height: 40*@rem;
+                    line-height: 40*@rem;
+                    .font-size(32);
+                    color: white;
+                    padding: 0 5*@rem;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+
+    .mproduct {
+        width: 100%;
+
+        .product_list1 {
+
+            li {
+                float: left;
+                width: 100%;
+
+                a {
+                    display: block;
+                    padding: 10*@rem 5*@rem;
+                    width: 100%;
+                    background-color: #fff;
+
+                    .pic {
+                        float: left;
+
+                        img {
+                            width: 100*@rem;
+                            height: 100*@rem;
+                        }
+                    }
+                    .info {
+                        overflow: hidden;
+                        padding-left: 20*@rem;
+                        .title {
+                            color: #333;
+                            min-height: 60*@rem;
+                            .font-size(30);
+                        }
+                        .other {
+                            margin-top: 8*@rem;
+                            color: @font-grew;
+                            margin-right: 5*@rem;
+
+                            .comment {
+                                float: right;
+                            }
+                        }
+                        .price {
+                            .font-size(36);
+                            color: red;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+// 分页模块开始
+.mm_fenye {
+    width: 100%;
+    // display: table;
+    padding: 5*@rem;
+    background-color: white;
+    // table-layout:fixed;
+
+    div {
+    //    width: 100%;
+    //    display: table-cell;
+    float: left;
+    width: 33.3%
+    }
+     .fenye_first {
+        display: block;
+        width: 100%;   
+        .font-size(28);
+        height: 35*@rem;
+        line-height: 35*@rem;
+        border: 1px solid #bababa;
+        border-radius: 5px;
+        text-align: center;
+        background-image: linear-gradient(#f1f1f1,#d4d4d4);
+        color: black;
+    }
+    .fenye_last {
+        display: block;
+        width: 100%;   
+        .font-size(28);
+        height: 35*@rem;
+        line-height: 35*@rem;
+        border: 1px solid #bababa;
+        border-radius: 5px;
+        text-align: center;
+        background-image: linear-gradient(#f1f1f1,#d4d4d4);
+        color: black;
+    }
+    .select1 {
+        // width: 100%;
+        padding:0 5*@rem;
+        vertical-align: middle;
+        text-align: center;
+        .fenye_select {
+            height: 35*@rem;
+            min-width: 70*@rem;
+            .font-size(36);
+           
+        }
+    }
+}
+// 商品详情模块开始
+.mm_mbody {
+    .mprodetail {
+        width: 100%;
+        background-color: #fff;
+        padding: 5*@rem;
+
+        .d-pic {
+            padding: 5*@rem;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                height: 150*@rem;
+                width: 150*@rem;
+            }
+        }
+        .d-tit {
+            .font-size(32);
+            color: #575757;
+        }
+    }
+    .mtab {
+        width: 100%;
+
+        ul {
+            width: 100%;
+            border-top: 1px solid #c14d00;
+            border-bottom: 1px solid #c14d00;
+
+            li {
+                float: left;
+                width: 33.3%;
+                border-left: 1px solid #c14d00;
+         
+                a {
+                    display: block;
+                    height: 35*@rem;
+                    line-height: 35*@rem;
+                    width: 100%;
+                    text-align: center;
+                    .font-size(30);
+                    color: white;
+                    background-color: #fff;
+
+                    &:first-child {
+                        background-image: linear-gradient(#ffa632,#ff9000);
+                    }
+                }
+            }
+            
+        }
+    }
+}
+// 省钱控模块开始
+.ctrl_header {
+    width: 100%;
+    height: 44*@rem;
+    background-color: @main-color;
+
+    .icon_left {
+        display: block;
+        float: left;
+        height: 100%;
+        padding: 13*@rem;
+
+        img {
+            height: 18*@rem;
+        }
+    }
+    .icon_right {
+        display: block;
+        height: 100%;
+        float: right;
+        padding: 7*@rem 12*@rem;
+    
+        img {
+            height: 32*@rem;
+        }
+    
+    }
+    h1 {
+        overflow: hidden;
+        height: 44*@rem;
+        line-height: 44*@rem;
+        text-align: center;
+        color: white;
+        .font-size(40);
+        font-weight: bold;
+    }
+}
+// 国内折扣
+
+.mproductshow {
+    background-color: #fff;
+    padding: 10*@rem 10*@rem;
+    .tit {
+        font-weight: bold;
+        h3 {
+            .font-size(40);
+            color: black;
+            font-weight: bold;
+            margin: 10*@rem 0;
+            line-height: 30*@rem;
+        }
+        p {
+            color: #ff6c00;
+            height: 10*@rem;
+            .font-size(30);
+            margin-bottom: 10*@rem;
+        }
+    }
+    .info {
+        padding: 5*@rem;
+        color: #999999;
+        span {
+            margin-right: 5*@rem;
+        }
+        .say {
+            a{
+                color: #4682c5;
+            }
+           
+        }
+    }
+  
+    .content {
+        .pic {
+            float: right;
+            img {
+                width: 120*@rem;
+                height: 120*@rem;
+            }
+        }
+        .con {
+            .font-size(32);
+            line-height: 20*@rem;
+            color: black;
+        }
+        .lpic {
+            text-align: center;
+        }
+    }
+    .city {
+        text-align: center;
+        padding-top: 20*@rem;
+        ul {
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+            li {
+                text-align: center;
+                border-bottom: 1px dashed #c0c0c0;
+                a {
+                    padding: 5*@rem;
+                    display: block;
+                    span {
+                        text-align: left;
+                        color: #333;
+                        padding: 0 25*@rem;
+                        strong {
+                            float: right;
+                            text-align: right;
+                            padding: 0 20*@rem;
+                            color: #c14d00;
+                            margin-left: 10*@rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .golink {
+        width: 100%;
+        padding: 15*@rem 10*@rem;
+        a {
+            display: block;
+            width: 100%;
+            height: 35*@rem;
+            background-color: #ff9000;
+            border-radius: 5px;
+            text-align: center;
+            line-height: 35*@rem;
+            .font-size(34);
+            color: white;
+        }
+    }
+    .city {
+        width: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .comment {
+        .cu-content-pl {
+            .tit {
+                .font-size(32);
+                color: black;
+                padding: 15*@rem 10*@rem;
+            }
+            .reply {
+                .form {
+                    width: 100%;
+                    border: 2px solid #eceae8;
+                    padding-top: 3*@rem;
+                    padding-left: 3*@rem;
+                    border-radius: 5px;
+                    textarea {
+                        width: 100%;
+                    }
+                }
+                .ctrl {
+                    background-color: #fbfbfb;
+                    height: 30*@rem;
+                    position: relative;
+                    input {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        height: 30*@rem;
+                        width: 60*@rem;
+                        background-color: #ff841d;
+                        color: white;
+                        border-radius: 0 0 5px 0;
+                        border: 1px solid #ff841d;
+                    }
+                }
+            }
+        }
+        .newtit {
+            .font-size(32);
+            line-height: 30*@rem;
+            padding: 10*@rem;
+            color: black;
+            font-weight: bold;
+        }
+        .list {
+            width: 100%;
+            ul {
+                width: 100%;
+                li {
+                    padding: 20*@rem 13*@rem;
+                    .username {
+                        color: #5997c0;
+                        .font-size(26);
+                        float: left;
+                    }
+                    .time {
+                        // float: right;
+                        text-align: right;
+                        color: black;
+                    }
+                }
+            }
+            .userimg {
+                float: left;
+                width: 40*@rem;
+                overflow: hidden;
+               img {
+                height: 40*@rem;
+                width: 40*@rem;
+                border-radius: 50%;
+               }
+            }
+            .con {
+                padding-left: 5*@rem;
+                overflow: hidden;
+                .name {
+                    padding-bottom: 3*@rem;
+                }
+            }
+            .content {
+                .font-size(30);
+                color: black;
+                line-height: 35*@rem;
+            }
+        }
+    }
+    .mdaohan {
+        width: 100%;
+        height: 40*@rem;
+        background-color: #5a5a5a;
+        border: 1px solid #ddd;
+        overflow: hidden;
+    
+        ul {
+            width: 100%;
+            padding: 0 10*@rem;
+            overflow: hidden;
+    
+            li {
+                float: left;
+                max-width: 40%;
+            
+                a {
+                    display: inline-block;
+                    height: 40*@rem;
+                    line-height: 40*@rem;
+                    .font-size(32);
+                    color: white;
+                    padding: 0 5*@rem;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
+// 国内折扣开始
+.recommon-product {
+    width: 100%;
+    background-color: #fff;
+    ul {
+        li {
+            float: left;
+            width: 50%;
+            height: 180*@rem;
+            padding: 5*@rem 0 0 5*@rem;
+            border-right: 1px solid #eeeeee;
+            border-bottom: 1px solid #eeeeee;
+            box-sizing: border-box;
+            overflow: hidden;
+            // border-top-width:0;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+
+                .img {
+                    height: 100*@rem;
+                    width: 100*@rem;
+                    margin: 0 auto;
+ 
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                }
+                .name {
+                    padding: 0 10*@rem;
+                    height: 20*@rem;
+                    font-weight: bold;
+                    .font-size(28);
+                    color: black;
+                    text-align: left;
+                }
+                .price {
+                    padding: 10*@rem 10*@rem 5*@rem;
+                    .font-size(24);
+                    text-align: left;
+                    color: #ff6c00;
+                }
+                .mall {
+                    text-align: left;
+                    color: #666;
+                    padding: 5*@rem 10*@rem;
+                }
+                
+            }
+        }
+    }
+}
+// 白菜价模块开始
+.coupon-title {
+    .bcj-head-cat {
+        height: 35*@rem;
+        .bcj-title {
+           width: 100%;
+           height: 35*@rem;
+           .ul-wapper {
+               background-color: #fff;
+              ul {
+                border-bottom: 1px solid #eee;
+                background-color: #fff;
+                  li {
+                      float: left;
+                      .font-size(28);
+                      line-height: 35*@rem;
+                     a {
+                         display: block;
+                         color: #333;
+                         height: 35*@rem;
+                         margin: 0 8*@rem;
+                     }
+                     &.active a {
+                         color: #e4393c;
+                         border-bottom: 2px solid #e4393c;
+                     }
+                  }
+              }
+           }
+        }
+    }
+    .bcj-list {
+        width: 100%;
+        margin-top: 5*@rem;
+
+        ul {
+            li {
+                margin: 5*@rem 0;
+                background-color: #fff;
+                padding: 8*@rem 5*@rem;
+                height: 95*@rem;
+                .pic {
+                    float: left;
+                    height: 80*@rem;
+                    width: 80*@rem;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .info {
+                    overflow: hidden;
+                    .i {
+                        .t {
+                            color: black;
+                            .font-size(30);
+                            padding: 0 7*@rem 8*@rem;
+                        }
+                        .pr {
+                            .font-size(40);
+                            padding: 0 0 7*@rem 10*@rem;
+                            color: #fc353a;
+                        }
+                        em {
+                            .font-size(24);
+                            font-style: normal;
+                            vertical-align:middle;
+                        }
+                        i {
+                            font-style: normal;
+                        }
+                        del {
+                            text-decoration: line-through;
+                            .font-size(26);
+                            color: #a8a8a8;
+                            margin-left: 5*@rem;
+                        }
+                    }
+                }
+                .o {
+                   width: 100%;
+                   padding: 0 0 0 10*@rem;
+                   .bar {
+                       height: 20*@rem;
+                       position: relative;
+                       i {
+                           position: absolute;
+                           box-sizing: border-box;
+                           width: 60*@rem;
+                           height: 10*@rem;
+                           border: 1px solid #fc353a;
+                           border-radius: 6px;
+                           background-color: #ffb7b7;
+                           span {
+                            .font-size(24);
+                            line-height: 10*@rem;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            text-align: center;
+                            color:white;
+                            font-style: normal;
+                           }
+                           em {
+                               position: absolute;
+                               top: 0;
+                               left: 0;
+                               background-color: #fc353a;
+                               border-radius: 5px;
+                               display: block;
+                            
+                               height: 100%;
+                           }
+                       }
+                       b {
+                           margin-left: 65*@rem;
+                           color: #fc353a;
+                       }
+                   }
+                   
+                    
+                }
+                .b{
+                    padding: 0 0 0 10*@rem;
+                    .q {
+                        float: left;
+                        a {
+                            height: 16*@rem;
+                            border: 1px dashed #e4393c;
+                            display: block;
+                            text-align: center;
+                            line-height: 16*@rem;
+                            color: #e4393c;
+                           
+                        }
+                    }
+                    .g {
+                        float: right;
+                        margin-right: 5*@rem;
+                        a {
+                         display: block;
+                         height: 17*@rem;
+                         line-height: 17*@rem;
+                         text-align: center;
+                         border-radius: 5px;
+                         background-color: #ff5e5d;
+                         color: white;
+                         padding: 0 5*@rem;
+                        }
+                    
+                }
+                }
+            }
+        }
+    }
+}
+// 优惠券开始
+.coupon-title1 {
+    ul {
+        padding: 6*@rem 0;
+        li {
+            text-align: center;
+            float: left;
+            // width: 60*@rem;
+            height: 80*@rem;
+            border: 1px solid #ccc;
+            margin-left: 5*@rem;
+            margin-top: 5*@rem;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                // padding: 5*@rem;
+                padding-left: 20*@rem;
+                padding-right: 19*@rem;
+                color: #333;
+              img {
+                  height: 50*@rem;
+                  width: 50*@rem;
+              }
+            } 
+        }
+    }
+}
+// 优惠券详情页
+.mianquan {
+    padding: 5*@rem;
+    .dinner {
+        text-align: center;
+        color: #333;
+        background-color: #fff;
+    }
+    .coupon-list {
+        background-color: #fff;
+        ul {
+            li {
+                a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                padding: 5*@rem 20*@rem 5*@rem 5*@rem;
+                border-bottom: 1px solid #c0c0c0;
+                overflow: hidden;
+                .pic {
+                    float: left;
+                    width: 70*@rem;
+                    height: 70*@rem;
+                   
+                    img {
+                      width: 100%;
+                      height: 100%;
+                    }
+                }
+                .info {
+                    overflow: hidden;
+                    .tit {
+                        h3 {
+                            padding: 10*@rem 10*@rem 5*@rem 10*@rem;
+                            .font-size(26);
+                            color: #333;
+                        }
+                        h2 {
+                           padding: 0 0 5*@rem 10*@rem;
+                           .font-size(30);
+                           font-weight: bold;
+                           color: black;
+                        }
+                    }
+                    .time {
+                        padding: 0 0 5*@rem 10*@rem;
+                        color: #c14d00;
+                    }
+                }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>国内折扣详情</title>
+  <link rel="stylesheet" href="./css/base.css">
+</head>
+<body>
+  <!-- 公共头部开始 -->
+  <div class="ctrl_header">
+    <a href="inlanddiscount.html" class="icon_left">
+      <img src="./images/icback.svg" alt="">
+    </a>
+    <a href="javascript:;" class="icon_right">
+      <img src="./images/header_app.png" alt="">
+    </a>
+    <h1>国内折扣</h1>
+  </div>
+  <!-- 渲染专属 -->
+  <div class="mm_main">
+    <div class="mproductshow">
+       <div class="tit">
+         <h3>周黑鸭 锁鲜气调盒装套餐（卤鸭脖200g+鸭锁骨240g）</h3>
+         <p class="price">29.9元包邮（39.9元，满75-19.95元）</p>
+       </div>
+       <div class="info">
+         <span class="mall">天猫旗舰店</span>
+         <span class="addtime">10-25 13:26</span>
+         <span class="autor">zzr / 慢慢买</span>
+         <span class="say">
+           <a href="#newcomment">有13人评论</a>
+         </span>
+       </div>
+       <div class="content">
+         <div class="pic">
+           <img src="" alt="">
+         </div>
+         <div class="con">
+            周黑鸭知名的卤制品休闲食品，它皮黑肉嫩、醇厚不腻、香鲜美味，具有香、辣、麻、酥、嫩的特点，而且肉质精到、鲜嫩诱人，不仅闻的香，看了更让人欲罢不能。今日推荐的这款是周黑鸭 锁鲜气调盒装套餐，包含卤鸭脖200g+鸭锁骨240g。
+         </div>
+         <div class="lpic"></div>
+       </div>
+       <div class="city"></div>
+       <div class="golink">
+         <a href="javascript:;">前往购买</a>
+       </div>
+       <div class="comment">
+         <div class="content_pl">
+           <div class="tit">发表评论</div>
+           <div class="reply">
+             <div class="form">
+               <textarea name="" rows="10"></textarea>
+               <input type="hidden">
+               <input type="hidden">
+               <div class="ctrl">
+                 <input type="submit" value="发表评论">
+               </div>
+             </div>
+           </div>
+           <div class="newtit" id="newcomment">最新评论</div>
+           <div class="list">
+             <ul>
+               <li>
+                 <div class="userimg">
+                   <img src="" alt="">
+                 </div>
+                 <div class="con">
+                   <div class="name"></div>
+                   <div class="content"></div>
+                 </div>
+               </li>
+             </ul>
+           </div>
+         </div>
+       </div>
+    
+    <!-- 公共底部 -->
+    </div> 
+    </div>
+  <!-- 公共底部 -->
+  <div class="mm_footer">
+    <div class="foot_top clearfix">
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="">
+        <img src="./images/top.jpg" alt="" width="15" height="15">
+        返回顶部
+      </a>
+    </div>
+    <div class="footer">
+      <p>
+        <a href="javascript:;" style="color: red;">手机APP下载</a>
+        <a href="javascript:;" style="color: black">慢慢买手机版</a>
+        <a href="javascript:;">--掌上比价平台</a>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+  </div>
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/flexible/flexible.js"></script>
+<script src="./lib/artTemplate/template.js"></script>  
+<script src="./js/discount.js"></script>
+<script type="text/html" id="tmp">
+  {{ each result as v i }}
+  <div class="tit">
+    <h3>{{v.productName}}</h3>
+    <p class="price">{{v.productPrice}}</p>
+  </div>
+  <div class="info">
+    <span class="mall">{{v.productPrice}}</span>
+    <span class="addtime">{{v.productTime}}</span>
+    <span class="autor">{{v.productTips}}</span>
+  </div>
+  <div class="content">
+    <div class="con">
+      {{v.productInfo}}
+    </div>
+    <div class="lpic">
+      {{#v.productImg}} 
+    </div>
+  </div>
+  <div class="golink">
+    <a href="javascript:;">前往购买</a>
+  </div>
+  <div class="city">
+    <img src="./images/mmbweixin2.png" alt="">
+  </div>
+  <div class="comment">
+    <div class="cu-content-pl ">
+        {{#v.productComment}}
+    </div>
+   
+    </div>
+      </div>
+    {{ /each }}
+</script>
+</body>
+</html>

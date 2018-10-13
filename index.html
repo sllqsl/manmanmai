@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>慢慢买主页</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <!-- 引入base样式 -->
+</head>
+<body>
+   <!-- 公共头部开始 -->
+   <div class="mm_header">
+     <div class="mm_logo">
+       <a href="index.html" title="慢慢买">
+         <img src="./images/header_logo.png" alt="">
+       </a>
+     </div>
+     <div class="mm_app">
+       <a href="javascript:;" title="手机app下载">
+         <img src="./images/header_app.png" alt="手机app下载">
+       </a>
+     </div>
+   </div>
+   <!-- 公共搜索框开始 -->
+   <div class="mm_search">
+      <input type="text" placeholder="请输入你想比价的商品">
+      <button class="search_btn">搜索</button>
+   </div>
+   <!-- 公共导航开始 -->
+   <div class="mm_nav">
+     <div class="row clearfix">
+      
+       <div class="menu-item">
+        <a href="">
+          <img src="./images/ic_cu.png" alt="省钱控">
+          <p>省钱控</p>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="">
+          <img src="./images/ic_coudanpin.png" alt="国内折扣">
+          <p>国内折扣</p>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="">
+          <img src="./images/ic_bcj.png" alt="白菜价">
+          <p>白菜价</p>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="">
+          <img src="./images/haitao.png" alt="淘淘折扣">
+          <p>淘淘折扣</p>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="">
+          <img src="./images/ic_temai.png" alt="优惠券">
+          <p>优惠券</p>
+        </a>
+      </div>
+      <div class="menu-item">
+        <a href="">
+          <img src="./images/ic_trend.png" alt="查历史价">
+          <p>查历史价</p>
+        </a>
+      </div>
+      <div class="menu-item">
+       <a href="">
+         <img src="./images/gengduo.png" alt="更多">
+         <p>更多</p>
+       </a>
+     </div>
+     <div class="menu-item">
+       <a href="">
+         <img src="./images/ic_coudanpin.png" alt="凑单品">
+         <p>凑单品</p>
+       </a>
+     </div>
+     <div class="menu-item">
+       <a href="">
+         <img src="./images/ic_search.png" alt="比价搜索">
+         <p>比价搜索</p>
+       </a>
+     </div>
+     <div class="menu-item">
+       <a href="">
+         <img src="./images/ic_mall.png" alt="商城导航">
+         <p>商城导航</p>
+       </a>
+     </div>
+     <div class="menu-item">
+       <a href="">
+         <img src="./images/ic_pp.png" alt="品牌大全">
+         <p>品牌大全</p>
+       </a>
+     </div>
+     </div>
+   </div>
+   <!-- 推荐部分 -->
+   <div class="recommen">
+     <div class="recommen_content">
+       <span>超值折扣推荐</span>
+       <img src="http://www.zuyushop.com/wap/images/more.png" alt="" width="20" height="20">
+     </div>
+   </div>
+   <!-- 推荐商品 -->
+   <div class="mm_recommen_product">
+     <div class="recommen_product_list">
+       <ul class="clearfix product_list">
+         <li>
+           <a href="">
+             <div class="pic">
+               <img src="./images/ic_bcj.png" alt="">
+             </div>
+             <div class="info">
+               <div class="title">
+                移动端凑单品：海天 鲜味 生抽 1.28L
+                <span>10.9元</span>
+               </div>
+               <div class="other">
+                 <span class="mall">京东商城 | 10-25 14:10</span>
+                 <span class="comment">
+                   <i class="icon-comment"></i>有1人评论
+                 </span>
+               </div>
+             </div>
+           </a>
+         </li>
+       </ul>
+     </div>
+   </div>
+   <!-- 更多开始 -->
+   <div class="mm_more">
+     <a href="moneyctrl.html">更多优惠信息 >></a>
+   </div>
+   <!-- 再一次推荐 -->
+   <div class="recommen">
+    <div class="recommen_content">
+      <span>品牌排行</span>
+      <img src="http://www.zuyushop.com/wap/images/more.png" alt="" width="20" height="20">
+    </div>
+   </div>
+   <!-- 公共底部 -->
+    <div class="mm_footer">
+      <div class="foot_top clearfix">
+        <a href="javascript:;">登录</a>
+        <a href="javascript:;">注册</a>
+        <a href="">
+          <img src="./images/top.jpg" alt="" width="15" height="15">
+          返回顶部
+        </a>
+      </div>
+      <div class="footer">
+        <p>
+          <a href="javascript:;" style="color: red;">手机APP下载</a>
+          <a href="javascript:;" style="color: black">慢慢买手机版</a>
+          <a href="javascript:;">--掌上比价平台</a>
+        </p>
+        <p>m.manmanbuy.com</p>
+      </div>
+    </div>
+   <script src="./lib/jquery/jquery.min.js"></script>
+   <script src="./lib/flexible/flexible.js"></script>
+   <script src="./lib/artTemplate/template.js"></script>
+   <script src="./js/index.js"></script>
+   <!-- 导航页模板 -->
+   <script type="text/html" id="tmp">
+     {{ each result as v i }}
+     
+    <div class="menu-item" _id='{{v._id}}' indexmenuId={{v.indexmenuId}}>
+      <a href="{{v.titlehref}}">
+         {{#v.img}}
+        <p>{{ v.name }}</p>
+      </a>
+    </div>
+ 
+     {{ /each }}
+  
+  </script>
+  <!-- 产品页模板 -->
+  <script type="text/html" id="tmp1">
+
+    {{ each result as v i }}
+    <li>
+      <a href="moneyproduct.html?productid={{v.productId}}">
+        <div class="pic">
+          {{ #v.productImgSm }}
+        </div>
+        <div class="info">
+          <div class="title">
+           {{ v.productName }}
+           <span>{{ v.productPinkage }}</span>
+          </div>
+          <div class="other">
+            <span class="mall">{{ v.productFrom }} | {{ v.productTime }}</span>
+            <span class="comment">
+              <i class="icon-comment"></i>{{ v.productComCount }}
+            </span>
+          </div>
+        </div>
+      </a>
+    </li>
+    {{ /each }}
+
+  </script>
+</body>
+</html>

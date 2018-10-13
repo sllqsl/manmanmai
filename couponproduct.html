@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/base.css">
+</head>
+<body>
+<!-- 公共头部开始 -->
+<div class="ctrl_header" style="background-color: #f4483e">
+  <a href="coupon.html" class="icon_left">
+    <img src="./images/icback.svg" alt="">
+  </a>
+  <a href="javascript:;" class="icon_right">
+    <img src="./images/header_app.png" alt="">
+  </a>
+  <h1>   			
+      优惠券
+</h1>
+</div>
+<!-- 主要部分开始 -->
+<div class="mianquan">
+  <div class="dinner">
+      --点餐前出示手机中的优惠券，即可享受优惠--
+  </div>
+  <div class="coupon-list">
+    <ul class="clearfix">
+      <li>
+        <a href="">
+          <div class="pic">
+            <img src="./images/ic_cu.png" alt="">
+          </div>
+          <div class="info">
+            <div class="tit">
+              <h3>C27  两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券</h3>
+              <h2>￥ 28</h2>
+            </div>
+            <div class="time">
+                有效期至10月31日
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- 公共底部 -->
+<div class="mm_footer">
+    <div class="foot_top clearfix">
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="">
+        <img src="./images/top.jpg" alt="" width="15" height="15">
+        返回顶部
+      </a>
+    </div>
+    <div class="footer">
+      <p>
+        <a href="javascript:;" style="color: red;">手机APP下载</a>
+        <a href="javascript:;" style="color: black">慢慢买手机版</a>
+        <a href="javascript:;">--掌上比价平台</a>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+</div>
+<script src="./lib/jquery/jquery.min.js"></script>
+<script src="./lib/flexible/flexible.js"></script>
+<script src="./lib/artTemplate/template.js"></script>
+<script src="./js/couponproduct.js"></script>
+<script type="text/html" id="tmp">
+  {{ each result as v i }}
+  <li>
+      <a href="">
+        <div class="pic">
+          {{#v.couponProductImg}}
+        </div>
+        <div class="info">
+          <div class="tit">
+            <h3>{{v.couponProductName}}</h3>
+            <h2>{{v.couponProductPrice}}</h2>
+          </div>
+          <div class="time">
+              {{v.couponProductTime}}
+          </div>
+        </div>
+      </a>
+    </li>
+   {{ /each }}
+</script>
+</body>
+</html>
