@@ -32,14 +32,17 @@
         <ul class="clearfix">
           <li><a href="index.html">首页 > </a></li>
           <li><a href="category.html">全部分类 ></a></li>
-          <li><a href="productlist.html">笔记本电脑 > </a></li>
         </ul>
   </div>
    <div class="rank">
      热门品牌排行
    </div> 
    <div class="row">
-
+     <ul>
+       <li>
+         <a href="">平板电视十大品牌</a>
+       </li>
+     </ul>
    </div> 
 </div>
 
@@ -66,5 +69,14 @@
 <script src="./lib/flexible/flexible.js"></script>
 <script src="./lib/artTemplate/template.js"></script>
 <script src="./js/brandTitle.js"></script>
+<script type="text/html" id="tmp">
+ {{ each result as v i }}
+  
+ <li>
+  <a href="brand.html?brandtitleid={{v.brandTitleId}}">{{v.brandTitle}}</a>
+</li>
+ 
+ {{ /each }}
+</script>
 </body>
 </html>

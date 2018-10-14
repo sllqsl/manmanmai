@@ -7,11 +7,8 @@ $.ajax({
   type:'get',
   success:function( info ) {
     console.log(info);
-    
+    var str = template('tmp',info);
+    $('.row ul').html(str);
   }
 })
- 
-
-
-
 })
