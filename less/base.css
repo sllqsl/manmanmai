@@ -997,6 +997,7 @@ textarea {
   height: 0.80001rem;
   line-height: 0.80001rem;
   border-bottom: 1px solid #ccc;
+  position: relative;
 }
 .mm_mbody .row ul li a {
   display: block;
@@ -1024,6 +1025,17 @@ textarea {
 }
 .mm_mbody .row ul li:last-child {
   border-bottom: none;
+}
+.mm_mbody .row ul li i {
+  position: absolute;
+  width: 0.53334rem;
+  height: 0.53334rem;
+  right: 0;
+  top: 13%;
+}
+.mm_mbody .row ul li i img {
+  width: 100%;
+  height: 100%;
 }
 .mm_mbody1 h3 {
   height: 0.80001rem;
@@ -1095,6 +1107,7 @@ textarea {
 .mm_mbody1 .row ul li {
   border-bottom: 1px solid #ccc;
   background-color: #fff;
+  position: relative;
 }
 .mm_mbody1 .row ul li a {
   display: block;
@@ -1165,6 +1178,19 @@ textarea {
 }
 .mm_mbody1 .row ul li:last-child {
   border-bottom: none;
+}
+.mm_mbody1 .row ul li i {
+  width: 0.53334rem;
+  height: 20 0.026667rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: rotate(90deg);
+  margin: 0.213336rem 0.213336rem 0 0;
+}
+.mm_mbody1 .row ul li i img {
+  width: 100%;
+  height: 100%;
 }
 .mm_mbody1 .product-list ul li {
   border-bottom: 1px solid #ccc;
@@ -1850,7 +1876,23 @@ textarea {
   display: block;
   color: #333;
   height: 0.933345rem;
-  margin: 0 0.213336rem;
+  margin: 0 0.106668rem;
+  font-size: 15px;
+}
+[data-dpr='2'] .coupon-title .bcj-head-cat .bcj-title .ul-wapper ul li a {
+  font-size: 30px;
+}
+[data-dpr='2.5'] .coupon-title .bcj-head-cat .bcj-title .ul-wapper ul li a {
+  font-size: 38px;
+}
+[data-dpr="2.75"] .coupon-title .bcj-head-cat .bcj-title .ul-wapper ul li a {
+  font-size: 41px;
+}
+[data-dpr="3"] .coupon-title .bcj-head-cat .bcj-title .ul-wapper ul li a {
+  font-size: 45px;
+}
+[data-dpr="4"] .coupon-title .bcj-head-cat .bcj-title .ul-wapper ul li a {
+  font-size: 60px;
 }
 .coupon-title .bcj-head-cat .bcj-title .ul-wapper ul li.active a {
   color: #e4393c;

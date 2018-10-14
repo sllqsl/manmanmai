@@ -22,7 +22,7 @@ $(function(){
    $('.coupon-list').on('click','li',function(){
      $('.modal').show();
      //点击出现模态框
-     
+    //  render();
      //  console.log($(this).children().children('.pic').children()[0]);
     //  var str = $(this).children().children('.pic').children()[0];
      //点击当前的图片标签
