@@ -26,8 +26,6 @@ $.ajax({
 })
 //下拉事件
 $('.filiter ul li').click(function(){
-  // console.log($(this));
-  // console.log($(this).data().id);
   var id = $(this).data().id;
   $('div[z="'+id+'"]').toggleClass('on');
 })
@@ -36,8 +34,8 @@ $('div[z]').on('click','li',function(){
  var text = $(this).children().text();
  var z = $(this).parent().parent().attr('z');
  $('li[data-id='+z+']').children('a').children('span').text(text);
- $(this).addClass('on');
- $(this).parent().parent().removeClass('on');  
+ $(this).addClass('on').siblings().removeClass('on').parent().parent().removeClass('on');
+//  $(this).parent().parent().removeClass('on');  
  var areaId = 0;
  var shopId = 0;
  if ( z == '1' ) {
@@ -51,7 +49,6 @@ $('div[z]').on('click','li',function(){
  render(shopId,areaId);
 })
 //渲染商品详情
-
 render();
 function render(a,b) {
   $.ajax({

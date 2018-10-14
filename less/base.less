@@ -1531,6 +1531,7 @@ input,textarea{
                 }
                 li {
                     border-bottom: 1px solid #dadada; 
+                    position: relative;
                     a {
                         display: block;
                         padding: 0 7*@rem;
@@ -1539,16 +1540,16 @@ input,textarea{
                         .font-size(30);
                         color: #333;
                     } 
-                    // &.on::after {
-                    //     content: '✔';
-                    //     width: 20*@rem;
-                    //     height: 20*@rem;
-                    //     position: absolute;
-                    //     top: 15%;  
-                    //     right: 10*@rem;
-                    //     color: #ff841d;
-                    //     .font-size(50);
-                    //  } 
+                    &.on::after {
+                        content: '✔';
+                        width: 20*@rem;
+                        height: 20*@rem;
+                        position: absolute;
+                        top: 0  ;  
+                        right: 0;
+                        color: #ff841d;
+                        .font-size(50);
+                     } 
                 }
             }
             .popcat {
@@ -1565,6 +1566,7 @@ input,textarea{
                 }
                 li {
                     border-bottom: 1px solid #dadada; 
+                    position: relative;
                     a {
                         display: block;
                         padding: 0 7*@rem;
@@ -1573,16 +1575,16 @@ input,textarea{
                         .font-size(30);
                         color: #333;
                     }
-                    // &.on::after {
-                    //     content: '✔';
-                    //     width: 20*@rem;
-                    //     height: 20*@rem;
-                    //     position: absolute;
-                    //     top: 15%;  
-                    //     right: 10*@rem;
-                    //     color: #ff841d;
-                    //     .font-size(50);
-                    //  }
+                    &.on::after {
+                        content: '✔';
+                        width: 20*@rem;
+                        height: 20*@rem;
+                        position: absolute;
+                        top: 0  ;  
+                        right: 0;
+                        color: #ff841d;
+                        .font-size(50);
+                     } 
                 }
             }
             .popprice {
@@ -1694,4 +1696,43 @@ input,textarea{
     }
    
 
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 0;
+    left: 0;
+    .box {
+        width: 200*@rem;
+        height: 150*@rem;
+        background-color: pink;
+        margin: 200*@rem auto;
+        position: relative;
+        // position: absolute;
+        span {
+            display: inline-block;
+            height: 40*@rem;
+            width: 30*@rem;
+            background-color: #333;
+            position: absolute;
+            border-radius: 5px;
+        }
+        .arr-left {
+            top:50%;
+            transform: translateY(-50%);
+            
+        }
+        .arr-right {
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
 }

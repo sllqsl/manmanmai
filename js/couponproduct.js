@@ -1,4 +1,5 @@
 $(function(){
+  // 功能1：发送ajax请求获取数据渲染
   var couponid = getSearch('couponid');
   console.log(couponid);
  $.ajax({
@@ -14,6 +15,9 @@ $(function(){
      $('.coupon-list ul').html(str);
    }
  })
+//  功能2：点击优惠券出现录播图轮播
+  
+ 
 // 专门通过传递的参数, 可以解析出地址栏的参数值
 function getSearch( name ) {
   var search = location.search; // ?name=pp&age=18&desc=%E5%B8%85
