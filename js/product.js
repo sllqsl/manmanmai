@@ -1,5 +1,8 @@
 $(function(){
  var productid = getSearch('productid');
+ var categoryid = getSearch('categoryid');
+//  var str1;
+
  $.ajax({
    url:'http://127.0.0.1:9090/api/getproduct',
    data:{
@@ -13,8 +16,24 @@ $(function(){
      $('.mprodetail').html(str);
      var str1 = template('tmp1',info);
      $('.bjshop').html(str1);
+     str1 = info.result[0].productName.split(' ')[0]
+     $.ajax({
+      url:'http://127.0.0.1:9090/api/getcategorybyid',
+      data:{
+       categoryid:categoryid
+      },
+      type:'get',
+      dataType:'json',
+      success:function( info ) {
+        console.log(info);
+        var str = template('tmp3',info);
+        $('.mdaohan ul').html(str + '<li><a href="javascript:;">'+str1+'</a></li>');
+      }
+    })
+     
    }
  })
+
 $.ajax({
   url:'http://127.0.0.1:9090/api/getproductcom',
   data:{

@@ -18,7 +18,7 @@ $(function(){
        var base = {
          pageNum : Math.ceil(info.totalCount/info.pagesize),     // 总共几页，不传默认置为 1
          pageVal : 'pageid',     // 控制页面切换的参数,不传默认使用 pageid，根据 pageid 切页
-         start : 1,       // 参数从几 开始传 默认为 1
+         start : 0,       // 参数从几 开始传 默认为 1
          pageUrl : href,  // 不赋值默认为当前页面  xxx.html?pageVal
          extraStr: ''     // 默认为空，额外需要传在 url 中的值  &name=123...
      };

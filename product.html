@@ -31,9 +31,8 @@
      <!-- 面包屑导航 -->
       <div class="mdaohan">
         <ul class="clearfix">
-          <li><a href="index.html">首页 > </a></li>
-          <li><a href="category.html">全部分类 ></a></li>
-          <li><a href="productlist.html">笔记本电脑 > </a></li>
+        
+         
         </ul>
       </div>
       <!-- 产品主体 -->
@@ -162,6 +161,14 @@
       </div>
     </li>
    {{ /each }}
+  </script>
+
+  <script type="text/html" id="tmp3">
+    {{ each result as v i }}
+    <li><a href="index.html">首页 > </a></li>
+    <li><a href="productlist.html?categoryid={{v.categoryId}}">{{v.category}} > </a></li>
+    
+    {{ /each }}
   </script>
 </body>
 </html>

@@ -15,6 +15,11 @@ $.ajax({
   //  功能2点击出现下边框
    $(titleLi[titleid || 0]).addClass('active');
    topSwipe($('.bcj-title').find('.ul-wapper ul'),titleid);
+   var width =0;
+   Array.prototype.slice.call(titleLi).forEach(function(v,i){
+       width += $(v).width();
+   })
+   $('.ul-wapper ul').width(width);
  }
 })
 $.ajax({
@@ -32,7 +37,6 @@ $.ajax({
   }
 })
 // 功能3实现区域滚动
-
 // 原生区域滚动
 function topSwipe(dom, titleid) {
   var domWidth = dom.width();
